@@ -8,7 +8,7 @@ namespace Models
 {
     public class Admin
     {
-        public int id
+        public int userId
         {
             get;
             set;

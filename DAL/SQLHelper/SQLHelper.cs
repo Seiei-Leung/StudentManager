@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Configuration;// 引入读取配置文件类所在的命名空间
+using System.Configuration;// 引入读取配置文件类所在的命名空间，要在根目录下建立配置文件，比如此项目的根目录是在 StudentManager 表现层当中
 
 namespace DAL
 {
@@ -81,7 +81,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                // 写入日志
+                // todo 写入日志
                 throw ex;
                 conn.Close();
             }

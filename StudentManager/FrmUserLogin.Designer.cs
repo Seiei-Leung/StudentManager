@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pw = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -45,12 +45,12 @@
             this.label1.Text = "用户名：";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // userName
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 1;
+            this.userName.Location = new System.Drawing.Point(134, 41);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(100, 21);
+            this.userName.TabIndex = 1;
             // 
             // label2
             // 
@@ -62,12 +62,12 @@
             this.label2.Text = "密码：";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox2
+            // pw
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 3;
+            this.pw.Location = new System.Drawing.Point(134, 80);
+            this.pw.Name = "pw";
+            this.pw.Size = new System.Drawing.Size(100, 21);
+            this.pw.TabIndex = 3;
             // 
             // button1
             // 
@@ -77,6 +77,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "登录";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmUserLogin
             // 
@@ -84,9 +85,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 182);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.pw);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmUserLogin";
@@ -100,9 +101,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox pw;
         private System.Windows.Forms.Button button1;
     }
 }
