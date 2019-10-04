@@ -10,9 +10,9 @@ namespace DAL
 {
     public class AdminService
     {
-        public Admin login(string userId, string pw)
+        public static Admin login(string userId, string pw)
         {
-            string sql = "select userName from admin where userId = '{0}' and pw = '{1}'";
+            string sql = "select name from admin where userId = '{0}' and pw = '{1}'";
             sql = string.Format(sql, userId, pw);
             MySqlDataReader reader = SQLHelper.getReader(sql);
             Admin admin = null;
@@ -24,7 +24,7 @@ namespace DAL
                     {
                         userId = Convert.ToInt32(userId),
                         pw = pw,
-                        name = reader[""].ToString()
+                        name = reader["name"].ToString()
                     };
                 }
                 return admin;

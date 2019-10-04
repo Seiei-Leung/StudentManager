@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models;
+using DAL;
 
 namespace StudentManager
 {
@@ -55,9 +57,18 @@ namespace StudentManager
                 this.userName.SelectAll();
                 return;
             }
-
-
-
+            Admin admin = AdminService.login(userId, pw);
+            if (admin == null)
+            {
+                MessageBox.Show("账号或密码错误");
+                return;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+                Program.currentAdmin = admin;
+            }
+            
         }
     }
 }
