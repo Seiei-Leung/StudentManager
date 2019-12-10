@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="ext\StudentExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreList.cs" />
     <Compile Include="Student.cs" />

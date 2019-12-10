@@ -45,23 +45,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\SerializeObjectToString.cs" />
+    <Compile Include="ExcelPrint\StudentPrint.cs" />
+    <Compile Include="FormStudentDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudentDetail.Designer.cs">
+      <DependentUpon>FormStudentDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAttendence.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAttendence.Designer.cs">
-      <DependentUpon>FrmAttendence.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManagerStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManagerStudents.Designer.cs">
+      <DependentUpon>FrmManagerStudents.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUserLogin.cs">
       <SubType>Form</SubType>
@@ -72,13 +80,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\RegexUtil.cs" />
+    <EmbeddedResource Include="FormStudentDetail.resx">
+      <DependentUpon>FormStudentDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>FrmMain1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManagerStudents.resx">
+      <DependentUpon>FrmManagerStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUserLogin.resx">
       <DependentUpon>FrmUserLogin.cs</DependentUpon>
@@ -93,6 +105,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,9 +117,52 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>99</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{76c90b82-7110-4311-b22f-01013fa4ac8e}</Project>
@@ -117,6 +173,7 @@
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,7 +8,7 @@ namespace Models
 {
     public class StudentClass
     {
-        public int classId
+        public int id
         {
             set;
             get;

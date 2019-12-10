@@ -49,7 +49,7 @@
     <Compile Include="ScoreListService.cs" />
     <Compile Include="SQLHelper\SQLHelper.cs" />
     <Compile Include="StudentService.cs" />
-    <Compile Include="StudnetClassService.cs" />
+    <Compile Include="StudentClassService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">

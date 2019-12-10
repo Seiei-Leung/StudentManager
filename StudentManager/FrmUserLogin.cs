@@ -17,6 +17,8 @@ namespace StudentManager
         public FrmUserLogin()
         {
             InitializeComponent();
+            this.userName.Text = "123";
+            this.pw.Text = "123";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,10 +67,36 @@ namespace StudentManager
             }
             else
             {
-                this.DialogResult = DialogResult.OK;
                 Program.currentAdmin = admin;
+                this.DialogResult = DialogResult.OK; // 在程序中一旦设置 DialogResult 的值，接下来就会自动执行close()的方法，所以其实没有必要写this.close()
             }
             
         }
+
+        private void userName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.userName.Text.Length == 0)
+            {
+                return;
+            }
+            // 13 为 Enter 按键的代码，如果检测到按键为 Enter，则聚焦密码输入框
+            if (e.KeyValue == 13)
+            {
+                this.pw.Focus();
+            }
+        }
+
+        private void pw_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.pw.Text.Length == 0)
+            {
+                return;
+            }
+            if (e.KeyValue == 13)
+            {
+                this.button1_Click(null, null);
+            }
+        }
+
     }
 }

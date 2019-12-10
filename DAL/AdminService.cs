@@ -16,23 +16,17 @@ namespace DAL
             sql = string.Format(sql, userId, pw);
             MySqlDataReader reader = SQLHelper.getReader(sql);
             Admin admin = null;
-            try
+            if (reader.Read())
             {
-                if (reader.Read())
+                admin = new Admin()
                 {
-                    admin = new Admin()
-                    {
-                        userId = Convert.ToInt32(userId),
-                        pw = pw,
-                        name = reader["name"].ToString()
-                    };
-                }
-                return admin;
+                    userId = Convert.ToInt32(userId),
+                    pw = pw,
+                    name = reader["name"].ToString()
+                 };
             }
-            catch (Exception ex)
-            {
-                throw new Exception("访问数据发生错误：" + ex.Message);
-            }
+            reader.Close();
+            return admin;
         }
     }
 }

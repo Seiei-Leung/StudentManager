@@ -76,7 +76,7 @@ namespace DAL
             try
             {
                 conn.Open();
-                MySqlDataReader result = cmd.ExecuteReader(CommandBehavior.CloseConnection); // 关闭数据库链接
+                MySqlDataReader result = cmd.ExecuteReader(CommandBehavior.CloseConnection); // 关闭数据库链接，不能在 finally 语句中关闭链接，因为如果关闭了，MySqlDataReader 而又尚未读取，关闭之后 MySqlDataReader 也就读取不到了
                 return result;
             }
             catch (Exception ex)

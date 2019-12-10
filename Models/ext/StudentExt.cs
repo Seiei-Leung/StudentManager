@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models
+namespace Models.ext
 {
-    public class Student
+    public class StudentExt
     {
+
         public int studentId
         {
             set;
@@ -32,7 +33,7 @@ namespace Models
             get;
         }
 
-        public int classId
+        public string className
         {
             set;
             get;

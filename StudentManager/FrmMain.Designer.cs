@@ -65,7 +65,7 @@
             this.考勤查询ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(588, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(425, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -81,13 +81,13 @@
             // 修改密码ToolStripMenuItem
             // 
             this.修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改密码ToolStripMenuItem.Text = "修改密码";
             // 
             // 退出登陆ToolStripMenuItem
             // 
             this.退出登陆ToolStripMenuItem.Name = "退出登陆ToolStripMenuItem";
-            this.退出登陆ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出登陆ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.退出登陆ToolStripMenuItem.Text = "退出登陆";
             // 
             // 学生管理ToolStripMenuItem
@@ -102,13 +102,13 @@
             // 新增学生1ToolStripMenuItem
             // 
             this.新增学生1ToolStripMenuItem.Name = "新增学生1ToolStripMenuItem";
-            this.新增学生1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新增学生1ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.新增学生1ToolStripMenuItem.Text = "新增学生";
             // 
             // 学生信息ToolStripMenuItem
             // 
             this.学生信息ToolStripMenuItem.Name = "学生信息ToolStripMenuItem";
-            this.学生信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.学生信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.学生信息ToolStripMenuItem.Text = "学生信息";
             // 
             // 查找ToolStripMenuItem
@@ -123,13 +123,13 @@
             // 查询ToolStripMenuItem
             // 
             this.查询ToolStripMenuItem.Name = "查询ToolStripMenuItem";
-            this.查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查询ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.查询ToolStripMenuItem.Text = "分析";
             // 
             // 快速查询ToolStripMenuItem
             // 
             this.快速查询ToolStripMenuItem.Name = "快速查询ToolStripMenuItem";
-            this.快速查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.快速查询ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.快速查询ToolStripMenuItem.Text = "快速查询";
             // 
             // 考勤查询ToolStripMenuItem
@@ -148,7 +148,7 @@
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(588, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(425, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -159,6 +159,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton1.Text = "新增学生";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -167,6 +168,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton2.Text = "学生信息";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -198,9 +200,9 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 290);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 455);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(588, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(425, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -224,18 +226,17 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(12, 53);
+            this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 234);
+            this.panel1.Size = new System.Drawing.Size(425, 399);
             this.panel1.TabIndex = 3;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 312);
+            this.ClientSize = new System.Drawing.Size(425, 477);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -243,6 +244,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.Text = "学生管理系统";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
